@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react"
-//import "../node_modules/bootstrap/dist/css/bootstrap.min.css";
+import { Icon } from "@iconify/react";
 import ScoreBoard from "./components/ScoreBoard"
 import blueCandy from './images/blue-candy.png'
 import greenCandy from './images/green-candy.png'
@@ -8,6 +8,7 @@ import purpleCandy from './images/purple-candy.png'
 import redCandy from './images/red-candy.png'
 import yellowCandy from './images/yellow-candy.png'
 import blank from './images/blank.png'
+
 
 const width = 8
 const candyColors = [
@@ -173,37 +174,66 @@ const App = () => {
 
   return (
     <div className="d-flex flex-column h-100 bg-light">
-      <div className="navbar navbar-expand-md navbar-dark bg-primary mb-4">
-        <a className="navbar-brand mx-auto" href="#">
-          Candy Crush Project
-        </a>
-      </div>
-      <div className="d-flex justify-content-around">
-        <div className="score border border-primary rounded text-center">
-          <div className="bg-primary">
-            <h2 className="text-light mx-4">Your Score</h2>
+      <div className="flex-shrink-0">
+        <div className="navbar navbar-expand-md navbar-dark bg-primary mb-4">
+          <a className="navbar-brand mx-auto" href="#">
+            Candy Crush Project
+          </a>
+        </div>
+        <main className="d-flex container justify-content-around mb-4">
+          <div className=" text-center">
+            <div className="bg-primary border border-primary rounded-top">
+              <h2 className="text-light mx-4 my-0">Your Score</h2>
+            </div>
+            <div className="border border-primary rounded-bottom my-auto align-middle">
+            <ScoreBoard score={scoreDisplay}/>
+            </div>
           </div>
-          <ScoreBoard score={scoreDisplay}/>
-        </div>
-        <div className="game">  
-          {currentColorArrangement.map((candyColor, index) => (
-            <img 
-              key={index}
-              src={candyColor}
-              alt={candyColor}
-              data-id={index}
-              draggable={true}
-              onDragStart={dragStart}
-              onDragOver={(e) => e.preventDefault()}
-              onDragEnter={(e) => e.preventDefault()}
-              onDragLeave={(e) => e.preventDefault()}
-              onDrop={dragDrop}
-              onDragEnd={dragEnd}
+          <div className="game">  
+            {currentColorArrangement.map((candyColor, index) => (
+              <img 
+                key={index}
+                src={candyColor}
+                alt={candyColor}
+                data-id={index}
+                draggable={true}
+                onDragStart={dragStart}
+                onDragOver={(e) => e.preventDefault()}
+                onDragEnter={(e) => e.preventDefault()}
+                onDragLeave={(e) => e.preventDefault()}
+                onDrop={dragDrop}
+                onDragEnd={dragEnd}
 
-            />
-          ))}
-        </div>
+              />
+            ))}
+          </div>
+        </main>
       </div>
+      <footer className="mt-auto py-2 bg-primary">
+        <div className="container d-flex justify-content-center mx-2 text-center">
+          <p className="text-light my-2">
+            Project developed by{" "}
+            <a
+              href="https://github.com/pedrohbs00/Candy-Crush-Project"
+              target="_blank"
+              rel="noreferrer"
+              className="list-group-item-action link-light"
+            >
+              <Icon icon="akar-icons:github-fill" />
+              Pedro
+            </a>
+            {" "}in support of the tutorial from Ania Kubów found{" "}
+            <a
+              href="https://youtu.be/PBrEq9Wd6_U"
+              target="_blank"
+              rel="noreferrer"
+              className="list-group-item-action link-light"
+            >
+              here.
+            </a>
+          </p>
+        </div>
+      </footer>
     </div>
   );
 }

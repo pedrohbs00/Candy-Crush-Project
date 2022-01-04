@@ -5219,7 +5219,7 @@ fieldset:disabled .btn {
 }
 
 .link-light:hover, .link-light:focus {
-  color: #eeeeee;
+  color: #f883a3;
 }
 
 .link-dark {
@@ -9160,8 +9160,4 @@ html {
 .game img {
   width: 4.86111vw;
   height: 4.86111vw;
-}
-
-.score {
-  height: 120px;
 }
