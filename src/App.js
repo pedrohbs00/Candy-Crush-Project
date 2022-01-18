@@ -173,10 +173,10 @@ const App = () => {
 
 
   return (
-    <div className="d-flex flex-column h-100 bg-light">
+    <div className="app d-flex flex-column h-100 bg-light">
       <div className="flex-shrink-0">
         <div className="navbar navbar-expand-md navbar-dark bg-primary mb-4">
-          <a className="navbar-brand mx-auto" href="#">
+          <a className="navbar-brand mx-auto" href="/">
             Candy Crush Project
           </a>
         </div>
