@@ -47,15 +47,21 @@ const ScoreBoard = ({ score }) => {
 
   return (
     <div className="">
-      <h2>{userName}</h2>
-      <h2 className="my-2">{score}</h2>
-      <button onClick={saveData}>Save Score</button>
-      <h2>HighScores:</h2>
-      {descendingGameStates?.map((gameStates, index) => (
-        <div key={index}>
-          <h3>{gameStates.username}: {gameStates.score}</h3>
+      <div className="border border-primary">
+        <h2>{userName}</h2>
+        <h2 className="my-2">{score}</h2>
+        <button className="btn btn-primary text-light mb-2" onClick={saveData}>Save Score</button>
+      </div>
+      <div className="border border-primary rounded-bottom highscores">
+        <h2>HighScores</h2>
+        <div classname="">
+        {descendingGameStates?.map((gameStates, index) => (
+          <div key={index}>
+            <h3>{gameStates.username}: {gameStates.score}</h3>
+          </div>
+        ))}
         </div>
-      ))}
+      </div>
     </div>
   )
 }

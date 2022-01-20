@@ -174,22 +174,22 @@ const App = () => {
 
   return (
     <div className="app d-flex flex-column h-100 bg-light">
-      <div className="flex-shrink-0">
+      <div className="flex-shrink-0 mb-4">
         <div className="navbar navbar-expand-md navbar-dark bg-primary mb-4">
           <a className="navbar-brand mx-auto" href="/">
             Candy Crush Project
           </a>
         </div>
-        <main className="d-flex container justify-content-around mb-4">
+        <main className="d-flex container justify-content-around">
           <div className=" text-center">
             <div className="bg-primary border border-primary rounded-top">
               <h2 className="text-light mx-4 my-0">Your Score</h2>
             </div>
-            <div className="border border-primary rounded-bottom my-auto align-middle">
+            <div className="my-auto align-middle">
             <ScoreBoard score={scoreDisplay}/>
             </div>
           </div>
-          <div className="game">  
+          <div className="game mb-4">
             {currentColorArrangement.map((candyColor, index) => (
               <img 
                 key={index}

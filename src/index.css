@@ -9161,3 +9161,8 @@ html {
   width: 4.86111vw;
   height: 4.86111vw;
 }
+
+.highscores {
+  height: 35vh;
+  overflow: auto;
+}

@@ -9,7 +9,7 @@ require('dotenv').config()
 app.use(express.json())
 
 app.get('/', (req,res) => {
-    res.json('this works')
+    res.json('running backend')
 })
 
 //get all scores
