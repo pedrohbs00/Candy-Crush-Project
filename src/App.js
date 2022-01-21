@@ -155,6 +155,10 @@ const App = () => {
       }
       setCurrentColorArrangement(randomColorArrangement)
     }
+
+    const resetScore = () => {
+      setScoreDisplay(0)
+    }
     useEffect(() => {
       createBoard()
     }, [])
@@ -182,7 +186,7 @@ const App = () => {
         </div>
         <main className="d-lg-flex container justify-content-lg-around">
           <div>
-              <ScoreBoard score={scoreDisplay} reset={createBoard}/>
+              <ScoreBoard score={scoreDisplay} reset={createBoard} scoreReset={resetScore}/>
           </div>
           <div className="game mx-auto mx-lg-0 mb-4">
             {currentColorArrangement.map((candyColor, index) => (
