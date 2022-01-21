@@ -117,7 +117,7 @@ const App = () => {
     const dragEnd = () => {
 
       const squareBeingDraggedId = parseInt(squareBeingDragged.getAttribute('data-id'))
-      const squareBeingReplacedId = parseInt(squareBeingReplaced.getAttribute('data-id'))
+      const squareBeingReplacedId = parseInt(squareBeingReplaced?.getAttribute('data-id'))
 
       const validMoves = [
         squareBeingDraggedId - 1,
@@ -182,7 +182,7 @@ const App = () => {
         </div>
         <main className="d-flex container justify-content-around">
           <div>
-              <ScoreBoard score={scoreDisplay}/>
+              <ScoreBoard score={scoreDisplay} reset={createBoard}/>
           </div>
           <div className="game mb-4">
             {currentColorArrangement.map((candyColor, index) => (

@@ -2,7 +2,7 @@ import axios from "axios"
 import { useEffect, useState } from "react"
 
 
-const ScoreBoard = ({ score }) => {
+const ScoreBoard = ({ score, reset }) => {
     const [gameStates, setGameStates] = useState(null)
     const [userName, setUserName] = useState("")
     const [gameUser, setGameUser] = useState("")
@@ -38,6 +38,7 @@ const ScoreBoard = ({ score }) => {
     const playGame = () => {
       setUserName(gameUser);
       setGameUser("");
+      reset()
     }
 
   return (
