@@ -9148,22 +9148,49 @@ html {
   }
 }
 
-
 .game {
-  width: 38.88888vw;
-  height: 38.88888vw;
+  width: 560px;
+  height: 560px;
   display: flex;
   flex-wrap: wrap;
   outline: 2px dashed #F6648C;
 }
 
 .game img {
-  width: 4.86111vw;
-  height: 4.86111vw;
+  width: 70px;
+  height: 70px;
 }
 
 .highscores {
-  height: 30vh;
+  height: 120px;
   overflow: auto;
 }
 
+@media (min-width: 992px) {
+  .highscores {
+    height: 30vh;
+    overflow: auto;
+  }
+}
+
+@media (min-width: 1600px) {
+  .game {
+    height: 840px;
+    width: 840px;
+  }
+  .game img {
+    height: 105px;
+    width: 105px;
+  }
+}
+
+@media (max-width: 760px) {
+  .game {
+    width: 58.3332vw;
+    height: 58.3332vw;
+  }
+  .game img {
+    width: 7.291665vw;
+    height: 7.291665vw;
+  }
+}

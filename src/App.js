@@ -180,11 +180,11 @@ const App = () => {
             Candy Crush Project
           </a>
         </div>
-        <main className="d-flex container justify-content-around">
+        <main className="d-lg-flex container justify-content-lg-around">
           <div>
               <ScoreBoard score={scoreDisplay} reset={createBoard}/>
           </div>
-          <div className="game mb-4">
+          <div className="game mx-auto mx-lg-0 mb-4">
             {currentColorArrangement.map((candyColor, index) => (
               <img 
                 key={index}

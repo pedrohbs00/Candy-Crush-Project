@@ -43,7 +43,7 @@ const ScoreBoard = ({ score, reset }) => {
 
   return (
     <div className="mb-2 text-center">
-      <div className="d-flex mb-2">
+      <div className="d-flex justify-content-center mb-2">
         <div className="form-control-sm">
           <input 
           type="text" 
@@ -56,26 +56,30 @@ const ScoreBoard = ({ score, reset }) => {
         onClick={playGame}
         >Play</button>
       </div>
-      <div className="mb-4">
-        <div className="bg-primary rounded-top">
-          <h2 className="text-light mx-4 my-0">Your Score</h2>
+      <div className="d-flex d-lg-block justify-content-evenly mb-4">
+        <div className="mb-lg-4">
+          <div className="bg-primary rounded-top">
+            <h2 className="text-light mx-4 my-0">Your Score</h2>
+          </div>
+          <div className="border border-top-0 border-primary">
+            <h2 className="m-0">{userName}</h2>
+            <h2 className="mb-2 mt-0">{score}</h2>
+            <button className="btn btn-primary text-light mb-2" onClick={saveData}>Save Score</button>
+          </div>
         </div>
-        <div className="border border-top-0 border-primary">
-          <h2 className="m-0">{userName}</h2>
-          <h2 className="mb-2 mt-0">{score}</h2>
-          <button className="btn btn-primary text-light mb-2" onClick={saveData}>Save Score</button>
-        </div>
-      </div>
-      <div className="bg-primary rounded-top">
-        <h2 className="text-light mb-0">HighScores</h2>
-      </div>
-      <div className="border border-top-0 border-primary rounded-bottom highscores">
-        <div classname="">
-          {descendingGameStates?.map((gameStates, index) => (
-            <div key={index}>
-              <h3>{gameStates.username}: {gameStates.score}</h3>
+        <div className="">
+          <div className="bg-primary rounded-top">
+            <h2 className="text-light mx-4 mb-0">HighScores</h2>
+          </div>
+          <div className="border border-top-0 border-primary rounded-bottom highscores">
+            <div classname="">
+              {descendingGameStates?.map((gameStates, index) => (
+                <div key={index}>
+                  <h3>{gameStates.username}: {gameStates.score}</h3>
+                </div>
+              ))}
             </div>
-          ))}
+          </div>
         </div>
       </div>
     </div>
