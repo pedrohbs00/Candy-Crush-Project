@@ -1,14 +1,13 @@
 import axios from "axios"
 import { useEffect, useState } from "react"
 
-
 const ScoreBoard = ({ score, reset, scoreReset }) => {
     const [gameStates, setGameStates] = useState(null)
     const [userName, setUserName] = useState("")
     const [gameUser, setGameUser] = useState("")
 
     const fetchData = async () => {
-      const response = await axios.get('http://localhost:8000/scores')
+      const response = await axios.get(`${process.env.REACT_APP_URL}/scores`)
       const data = Object.keys(response.data.data).map(item => response.data.data[item])
       setGameStates(data)
     }
@@ -19,7 +18,7 @@ const ScoreBoard = ({ score, reset, scoreReset }) => {
         username: userName,
         score: score
       }
-      axios.post('http://localhost:8000/addscore', data)
+      axios.post(`${process.env.REACT_APP_URL}/addscore`, data)
       .then(response => {console.log(response)})
       .catch(err => console.log(err))
       .then(fetchData)
