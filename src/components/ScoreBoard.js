@@ -59,7 +59,7 @@ const ScoreBoard = ({ score, reset, scoreReset }) => {
       <div className="d-flex d-lg-block justify-content-evenly mb-4">
         <div className="mb-lg-4">
           <div className="bg-primary rounded-top">
-            <h2 className="text-light mx-4 my-0">Your Score</h2>
+            <h3 className="text-light mx-sm-4 mx-2 my-0">Your Score</h3>
           </div>
           <div className="border border-top-0 border-primary">
             <h2 className="m-0">{userName}</h2>
@@ -69,13 +69,13 @@ const ScoreBoard = ({ score, reset, scoreReset }) => {
         </div>
         <div className="">
           <div className="bg-primary rounded-top">
-            <h2 className="text-light mx-4 mb-0">HighScores</h2>
+            <h3 className="text-light mx-sm-4 mx-2 mb-0">HighScores</h3>
           </div>
           <div className="border border-top-0 border-primary rounded-bottom highscores">
             <div classname="">
               {descendingGameStates?.map((gameStates, index) => (
                 <div key={index}>
-                  <h3>{gameStates.username}: {gameStates.score}</h3>
+                  <h4>{gameStates.username}: {gameStates.score}</h4>
                 </div>
               ))}
             </div>

@@ -9,7 +9,6 @@ import redCandy from './images/red-candy.png'
 import yellowCandy from './images/yellow-candy.png'
 import blank from './images/blank.png'
 
-
 const width = 8
 const candyColors = [
   blueCandy,
@@ -208,9 +207,9 @@ const App = () => {
           </div>
         </main>
       </div>
-      <footer className="mt-auto py-2 bg-primary">
-        <div className="container d-flex justify-content-center mx-2 text-center">
-          <p className="text-light my-2">
+      <footer className="mt-auto bg-primary">
+        <div className="container d-flex justify-content-center mx-auto text-center">
+          <p className="text-light py-3 my-auto">
             Project developed by{" "}
             <a
               href="https://github.com/pedrohbs00/Candy-Crush-Project"
