@@ -64,7 +64,7 @@ const ScoreBoard = ({ score, reset, scoreReset }) => {
           <div className="border border-top-0 border-primary">
             <h2 className="m-0">{userName}</h2>
             <h2 className="mb-2 mt-0">{score}</h2>
-            <button className="btn btn-primary text-light mb-2" onClick={saveData}>Save Score</button>
+            <button className="btn btn-primary text-light mb-2" onClick={saveData} disabled={userName.length === 0}>Save Score</button>
           </div>
         </div>
         <div className="">
