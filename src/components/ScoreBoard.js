@@ -7,7 +7,7 @@ const ScoreBoard = ({ score, reset, scoreReset }) => {
     const [gameUser, setGameUser] = useState("")
 
     const fetchData = async () => {
-      const response = await axios.get(`${process.env.REACT_APP_URL}/scores`)
+      const response = await axios.get(`${process.env.REACT_APP_URL}`)
       const data = Object.keys(response.data.data).map(item => response.data.data[item])
       setGameStates(data)
     }
@@ -18,7 +18,7 @@ const ScoreBoard = ({ score, reset, scoreReset }) => {
         username: userName,
         score: score
       }
-      axios.post(`${process.env.REACT_APP_URL}/addscore`, data)
+      axios.post(`${process.env.REACT_APP_URL_ADD}`, data)
       .then(response => {console.log(response)})
       .catch(err => console.log(err))
       .then(fetchData)
